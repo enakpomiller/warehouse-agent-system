@@ -1,0 +1,104 @@
+
+
+  <link rel="stylesheet" href="/css/style.css">
+       <div class="sub_header"></div>
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+   <div class="container">
+              <!-- start breadcrumb --> 
+            <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/agent/admin_login"> login </a></li>
+                <li class="breadcrumb-item active" aria-current="page"> Ware House Response  </li>
+            </ol>
+            </nav>
+        <!-- end breadrumb -->
+   </div>
+
+      {{#if delrec}}
+            <script>
+              alert(" deleted")
+              window.location = "admin_nego";
+              </script>
+      {{/if}}
+
+
+ <div class="container" style="margin-top:80px;margin-bottom:50px;">
+<h3> From Agent </h3> 
+<a href="/agent/more/">View  More </a>
+
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Product Image</th>
+          <th scope="col">Product Name</th>
+          <th scope="col">Ware House  Price</th>
+          <th scope="col">Product Brand</th>
+          <th scope="col">Customer Price</th>
+          <th scope="col"> Action </th>
+        </tr>
+      </thead>
+      <tbody>
+    <script> const resp = "accepted" ;</script>
+    {{#each getfull}}
+    <tr>
+      <td width="10%"><img src="http://localhost:4500/{{_previousDataValues.path}}" style="width:20%;"><br></td>
+      <form method="post" action="/agent/admin_nego">  
+      <input type="hidden" name="prod_id" value="{{_previousDataValues.id}}">
+      <td><input type="text" style="border:0px solid red;" class="pt-2 pb-2 mt-2 mb-2 " readonly name="prod_name" value="{{_previousDataValues.prod_name}}"></td>
+      <td><input type="text" style="border:0px solid red;" class="pt-2 pb-2 mt-2 mb-2 " readonly name="prod_price" value="{{_previousDataValues.prod_price}}"></td>
+      <td><input type="text" style="border:0px solid red;" class="pt-2 pb-2 mt-2 mb-2 " readonly name="prod_brand" value="{{_previousDataValues.prod_brand}}"></td>
+      <td> <input type="text"  type="text" style="border:0px solid red;" class="pt-2 pb-2 mt-2 mb-2 text-center"  readonly required name="cust_price" value="{{_previousDataValues.cust_price}}" ></td>
+      <td><input type="hidden" style="border:0px solid red;" class="pt-2 pb-2 mt-2 mb-2 " readonly name="token" value="{{_previousDataValues.token}}"></td>
+          <input type="hidden" name="path" value="{{_previousDataValues.path}}">
+      <td>
+
+        <select name="accept" class="form-control">
+          <option>select</option>
+          <option value="accepted"> Accept Price</option>
+            <option value="rejected"> Reject Price</option>
+        </select>
+      </td>
+      <td>
+        <button style="background:#000000;padding:10px;width:100%;border-radius:5px;border:0px solid red;color:#ef233c;font-weight:bold;" onclick="return confirm(' Do you wish to send a reply to the Agent? ')"> Send to Agent</button>
+      </td>
+      </form>
+          <td><a href="/agent/admin_delete/{{_previousDataValues.id}}" onclick="return confirm(' do you want to delete this record')" class="btn btn-danger">DELETE</a></td>
+    </tr>
+     {{/each}}
+
+  </tbody>
+</table>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- footer -->   
+<div class="card text-center footer">
+  <div class="card-header">
+    <marquee><p class="q-text"> Online Shopping Agency Warehousing System........</p> </marquee>
+  </div>
+    <div class="card-body">
+        <h5 class="card-title">Special title treatment</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <input type="text"  class="input-txt" name="" placeholder=" your email here  ">
+          <button class="btn-sub">subscribe</button>
+      
+        <a href="#" class="btn-top">Top</a>
+    </div>
+    <div class="card-footer text-muted">
+        © 2023 Shopping Agency Warehousing System. All rights reserved | Designed by Softwork
+    </div>
+</div>
+    <!-- end footer -->

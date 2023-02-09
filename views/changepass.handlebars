@@ -1,0 +1,70 @@
+
+
+    
+
+ 
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="sub_header_agent"></div>
+        </div>
+        <div class="col-md-4 " style="position:relative;left:5%;top:100px;">
+             {{#if changepass}}
+                <div class="alert alert-primary text-center" style="word-spacing:3px;font-family:sans-serif;border-radius:5px;">{{changepass}}</div>
+             {{/if}}
+
+               {{#if passmismatch}}
+                <div class="alert alert-primary text-center" style="background:#ef233c;color:white;word-spacing:3px;font-family:sans-serif;border-radius:5px;">{{passmismatch}}</div>
+             {{/if}}
+       
+        <!-- start breadcrumb --> 
+            <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/agent/login">Login</a></li>
+                <li class="breadcrumb-item active" aria-current="page"> Manage Password</li>
+            </ol>
+            </nav>
+        <!-- end breadrumb -->
+            <h4>Change password </h4>
+            <form action="/agent/changepass"  method="POST"> 
+                 <div class="form-group">
+                   <input type="text" required class="form-control mt-3 mb-3 pt-2 pb-2" name="email" placeholder=" Enter email" style="width:100%">
+                </div>
+               <div class="form-group">
+                   <input type="text" required class="form-control mt-3 mb-3 pt-2 pb-2" name="password" placeholder=" Enter new Password" style="width:100%">
+                </div>
+                <div class="form-group">
+                   <input type="text" required class="form-control mt-3 mb-3 pt-2 pb-2" name="newpassword" placeholder=" Confirm  Password" style="width:100%">
+                </div>
+            <button class="btn-cust-reg" style="width:100%"><i class="fas fa-lock"></i>Login </button>
+             <p><a href="/agent/cust_login">  Back to login </a> </p>
+        </div>
+       </form>
+
+    </div>
+    
+
+
+
+
+    <!-- footer -->   
+<div class="card text-center footer">
+  <div class="card-header">
+    <marquee><p class="q-text"> Online Shopping Agency Warehousing System........</p> </marquee>
+  </div>
+    <div class="card-body">
+        <h5 class="card-title">Special title treatment</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <input type="text"  class="input-txt" name="" placeholder=" your email here  ">
+          <button class="btn-sub">subscribe</button>
+      
+        <a href="#" class="btn-top">Top</a>
+    </div>
+    <div class="card-footer text-muted">
+        © 2023 Shopping Agency Warehousing System. All rights reserved | Designed by Softwork
+    </div>
+</div>
+    <!-- end footer -->
+        
+    

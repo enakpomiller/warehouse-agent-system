@@ -1,0 +1,101 @@
+    <!-- sweet alert cdn -->
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="sub_header_agent"></div>
+        </div>
+        <div class="col-md-4 " style="position:relative;left:5%;top:50px;">
+                   {{#if msg_create}}
+                  <script> 
+                    Swal.fire(
+                        'Success!',
+                        'Product created successfully!',
+                        'success'
+                        )
+                  </script>
+                 {{/if}}
+              {{#if msg_err}}
+                  <script> 
+                    Swal.fire(
+                        'Warning!',
+                        'Please fill all entries!',
+                        'warning'
+                        )
+                        
+                  </script> 
+                 {{/if}}
+            {{#if agent_exist}}
+                <div class="alert alert-primary text-center pt-2 pb-2" style="background:#ef233c;color:white;word-spacing:3px;font-family:sans-serif;border-radius:5px;">{{agent_exist}}</div>
+             {{/if}}
+         <!-- start breadcrumb --> 
+            <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/agent/login">Login</a></li>
+                <li class="breadcrumb-item active" aria-current="page"> Agent Registration Form </li>
+            </ol>
+            </nav>
+        <!-- end breadrumb -->
+            <h4> Agent Form</h4>
+         <form action="/agent/agent_reg"  method="POST"> 
+                 <div class="form-group">
+                   <input type="text" name="firstname" class="form-control mt-3 mb-3 pt-2 pb-2" placeholder=" Enter Firstname" style="width:100%">
+                </div>
+               <div class="form-group">
+                   <input type="text" name="othernames" class="form-control mt-3 mb-3 pt-2 pb-2" placeholder=" Enter Other names" style="width:100%">
+                </div>
+               <div class="form-group">
+                   <input type="text"  name="email" class="form-control mt-3 mb-3 pt-2 pb-2" placeholder=" Enter email" style="width:100%">
+                </div>
+                  <div class="form-group">
+                   <input type="text"  name="password" class="form-control mt-3 mb-3 pt-2 pb-2" placeholder=" Enter password" style="width:100%">
+                </div>
+               <div class="form-group">
+                   <input type="text" name="phone" class="form-control mt-3 mb-3 pt-2 pb-2" placeholder=" Enter phone number" style="width:100%">
+                </div>
+               <div class="form-group">
+                   <input type="text" name="address" class="form-control mt-3 mb-3 pt-2 pb-2" placeholder=" Enter address" style="width:100%">
+                </div>
+               <div class="form-group">
+                    <div class="form-group">
+                    <select name="category" class="form-control mt-3 mb-3 pt-2 pb-2">
+                        <option disabled> select ware house</option>
+                        <option cvalue="w1"> Ware House 1</option>
+                        <option value="w2"> Ware house 2</option>
+                        <option value="w3"> ware house 3</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                   <input type="date" name="date" class="form-control mt-3 mb-3 pt-2 pb-2" placeholder=" Enter address" style="width:100%">
+                </div>
+            <button class="btn-cust-reg" style="width:100%"> submit </button>
+        
+        </div>
+</form>
+    </div>
+    
+
+
+
+
+    <!-- footer -->   
+<div class="card text-center footer">
+  <div class="card-header">
+    <marquee><p class="q-text"> Online Shopping Agency Warehousing System........</p> </marquee>
+  </div>
+    <div class="card-body">
+        <h5 class="card-title">Special title treatment</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <input type="text"  class="input-txt" name="" placeholder=" your email here  ">
+          <button class="btn-sub">subscribe</button>
+      
+        <a href="#" class="btn-top">Top</a>
+    </div>
+    <div class="card-footer text-muted">
+        © 2023 Shopping Agency Warehousing System. All rights reserved | Designed by Softwork
+    </div>
+</div>
+    <!-- end footer -->
+        
+    

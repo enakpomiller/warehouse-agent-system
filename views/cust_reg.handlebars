@@ -1,0 +1,64 @@
+
+<div class="sub_header"></div>
+      <!-- custer registration module --> 
+   <div class="row m-5 container" align="center">
+
+      <h4 style="position:relative;right:10%;;"> Signup as customer</h4>
+         {{#if form_err}}
+               <div class="alert alert-primary text-center" style="background:#ef233c;color:white;word-spacing:3px;font-family:sans-serif;border-radius:5px;width:40%;margin:auto;">{{form_err}}</div>
+            {{/if}}
+
+         {{#if cust_exist}}
+               <div class="alert alert-primary text-center" style="background:#ef233c;color:white;word-spacing:3px;font-family:sans-serif;border-radius:5px;width:40%;margin:auto;">{{cust_exist}}</div>
+            {{/if}}
+     
+        <form action="/agent/cust_reg"  method="POST">
+          <div class="form-group">
+            <input type="text" name="firstname" class="form-control mt-3 mb-3" placeholder=" Enter Firstname" style="width:40%">
+          </div>
+          <div class="form-group">
+            <input type="text" name="othernames" class="form-control mt-3 mb-3" placeholder=" Other Names" style="width:40%">
+          </div>
+          <div class="form-group">
+            <input type="text"  name="email" class="form-control mt-3 mb-3" placeholder=" Enter email" style="width:40%">
+          </div> 
+          <div class="form-group">
+            <input type="text"  name="password" class="form-control mt-3 mb-3" placeholder=" Enter password" style="width:40%">
+         </div>
+           <Llabel style="position:relative;right:18%;">Gender</Llabel>
+          <div class="form-group">
+            <select name="gender" class="form-control" style="width:40%">
+                <option disabled> select </option>
+                <option></option>
+                <option> Male </option>
+              <option> Female </option>
+            </select>
+        </div>
+            <div class="form-group">
+          <input type="text" name="address" class="form-control mt-3 mb-3" style="width:40%" placeholder=" Address">
+        </div>
+        <button class="btn-cust-reg"> Register </button><p>
+    </div>
+    </form>
+</div>
+
+
+
+<!-- footer -->   
+<div class="card text-center footer">
+  <div class="card-header">
+    <marquee><p class="q-text"> Online Shopping Agency Warehousing System........</p> </marquee>
+  </div>
+    <div class="card-body">
+        <h5 class="card-title">Special title treatment</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <input type="text"  class="input-txt" name="" placeholder=" your email here  ">
+          <button class="btn-sub">subscribe</button>
+      
+        <a href="#" class="btn-top">Top</a>
+    </div>
+    <div class="card-footer text-muted">
+        © 2023 Shopping Agency Warehousing System. All rights reserved | Designed by Softwork
+    </div>
+</div>
+    <!-- end footer -->

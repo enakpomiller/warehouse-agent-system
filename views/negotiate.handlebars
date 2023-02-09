@@ -1,0 +1,67 @@
+
+
+  <link rel="stylesheet" href="/css/style.css">
+       <div class="sub_header"></div>
+       <div class="container">
+    <!-- start breadcrumb --> 
+      <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/">Home</a></li>
+          <li class="breadcrumb-item"><a href="/agent/prod_listing">Product Listing </a></li>
+          <li class="breadcrumb-item active" aria-current="page"> {{userid}} </li>
+      </ol>
+      </nav>
+    <!-- end breadrumb -->
+       </div>
+   
+
+<div class="container" style="margin-bottom:80px;margin-top:60px;"> 
+  <h5 class="text-center pb-4" style="font-family:sans-serif ;"> Negotiate Price On This Product  </h5>
+
+    {{#each getall}} 
+     <form class="" method="post" action="/agent/negotiate/{{_previousDataValues.id}}"> 
+    <div class="row" style="margin-left:25%;">   
+      <div class="col-md-4" style="">
+        <img src="http://localhost:4500/{{_previousDataValues.path}}" style="width:100%;"><br>
+      </div>
+      <div class="col-md-4" style="">
+          Product Name :   <input type="text" style="border:0px solid red;" class="pt-2 pb-2 mt-2 mb-2 text-center" readonly name="prod_name" value="{{_previousDataValues.prod_name}}"><br>
+           Product Price  <input type="text" style="border:0px solid red;" class="pt-2 pb-2 mt-2 mb-2 text-center" readonly name="prod_price" value="&#8358;{{_previousDataValues.prod_price}}"><br>
+           Product Brand <input type="text" style="border:0px solid red;" class="pt-2 pb-2 mt-2 mb-2 text-center" readonly name="prod_brand" value="{{_previousDataValues.prod_brand}}"><br>
+        <input type="number"  class="pt-2 pb-2 mt-2 mb-2 text-center" style="width:100%;" required name="cust_price" placeholder=" Enter Your Price"><br>
+        <input type="text" name="token" placeholder=" Enter Token" class="form-control pt-2 pb-2 mt-2 mb-2 text-center" required> 
+        <input type="hidden" style="border:0px solid red;" class="pt-2 pb-2 mt-2 mb-2 text-center" readonly name="path" value="{{_previousDataValues.path}}"><br>
+        <button style="background:#ef233c;padding:10px;width:100%;border-radius:5px;border:0px solid red;color:white;font-weight:bold;">Send to Agent</button>
+      </div> 
+    </div>
+    </form>
+    {{/each}}
+</div>
+
+
+
+
+
+
+
+
+
+
+<!-- footer -->   
+<div class="card text-center footer">
+  <div class="card-header">
+    <marquee><p class="q-text"> Online Shopping Agency Warehousing System........</p> </marquee>
+  </div>
+    <div class="card-body">
+        <h5 class="card-title">Special title treatment</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <input type="text"  class="input-txt" name="" placeholder=" your email here  ">
+          <button class="btn-sub">subscribe</button>
+      
+        <a href="#" class="btn-top">Top</a>
+    </div>
+    <div class="card-footer text-muted">
+        © 2023 Shopping Agency Warehousing System. All rights reserved | Designed by Softwork
+    </div>
+</div>
+    <!-- end footer -->

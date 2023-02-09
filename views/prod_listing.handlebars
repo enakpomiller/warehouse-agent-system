@@ -1,0 +1,121 @@
+
+  <link rel="stylesheet" href="/css/style.css">
+  <!-- font awesome cdn --> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- end font -->
+
+     <div class="sub_header"></div>
+
+
+
+
+  <link rel="stylesheet" href="/css/style.css">
+{{!-- 
+
+
+      <div class="sub_header"></div>
+
+
+  <div class="container" style="position:relative;top:70px;">
+<table class="table table-striped ">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">s/n</th>
+      <th scope="col">PROD NAME </th>
+      <th scope="col">PROD PRICE </th>
+      <th scope="col">PROD BRAND </th>
+      <th scope="col">WEIGHT </th>
+    <th scope="col"> IMAGE </th>
+    <th scope="col"> DATE </th>
+     <th scope="col" class="text-end">Action </th>
+    </tr>
+  </thead>
+  <tbody>
+  {{#each getall}}
+    <tr>
+      <th scope="row">{{_previousDataValues.id}}</th>
+      <td>{{_previousDataValues.prod_name}}</td>
+      <td>{{_previousDataValues.prod_price}}</td>
+      <td>{{_previousDataValues.prod_brand}}</td>  
+       <td>{{_previousDataValues.prod_weight}}</td>
+       <td>{{_previousDataValues.filename}}</td>
+       <td>{{_previousDataValues.date}}</td>
+      <td class="text-end">
+          <a href="" type="button" class="btn btn-success btn-small"><i class="bi bi-eye"></i>view </a>
+         <a href="/edituser/{{this.id}}" type="button" class="btn btn-warning btn-small"><i class="bi bi-pencil"></i>edit</a>
+         <a href="/{{this.id}}" type="button" onclick="return confirm('do you want to add')" class="btn btn-danger btn-small"><i class="bi bi-trash"></i>delete </a>
+      </td>
+    </tr>
+    {{/each}}
+
+  </tbody>
+</table>
+
+  </div> --}}
+
+<div class="container">
+      <!-- start breadcrumb --> 
+      <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/">Home</a></li>
+          <li class="breadcrumb-item"><a href="/agent/login">Login</a></li>
+          <li class="breadcrumb-item active" aria-current="page">  Token  {{userid}}   </li>
+      </ol>
+      </nav>
+    <!-- end breadrumb -->
+</div>
+
+
+        <section class="container" style="margin-bottom:30px;">
+            <h1 style="font-family:sans-serif; ;">Product Listing</h1>
+            
+            <div class="row"> 
+                {{#each getall}}
+            <div class="col-md-2 p-5 mb-2 mt-2" style="position:relative;bottom:50px;top:0px;border:1px solid red;width:30%;margin:auto;border-radius:5px;">
+                <center>
+                  <img src="../{{_previousDataValues.path}}" style="width:50%;"><br>
+                  {{_previousDataValues.id}}
+                     {{_previousDataValues.prod_name}}
+                    {{getall.prod_name}}
+                     <p>&#8358;{{_previousDataValues.prod_price}} </p> 
+                    {{_previousDataValues.prod_brand}} <br>
+        
+                    <a href="/agent/negotiate/{{_previousDataValues.id}}" onClick=" return confirm(' Do you wish to negotiate Price with Agent on this Product??');">
+                    <button  class="" style="background:#ef233c;padding:10px;border:0px solid red;border-radius:3px;color:white;font-family:sans-serif;"> Contact Agent</button>
+                    </a>
+                </center>
+
+            </div> 
+                {{else}}
+                <p> No Product found </p>
+                    {{/each}}
+                     
+         </div> 
+         </section>
+        
+
+
+        
+
+
+
+
+
+    <!-- footer -->   
+    <div class="card text-center footer">
+      <div class="card-header">
+        <marquee><p class="q-text"> Online Shopping Agency Warehousing System........</p> </marquee>
+      </div>
+        <div class="card-body">
+            <h5 class="card-title">Special title treatment</h5>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              <input type="text"  class="input-txt" name="" placeholder=" your email here  ">
+              <button class="btn-sub">subscribe</button>
+          
+            <a href="#" class="btn-top">Top</a>
+        </div>
+        <div class="card-footer text-muted">
+            © 2023 Shopping Agency Warehousing System. All rights reserved | Designed by Softwork
+        </div>
+    </div>
+    <!-- end footer -->

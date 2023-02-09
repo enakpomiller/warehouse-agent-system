@@ -1,0 +1,76 @@
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+<div class="sub_header"></div>
+<div class="container">
+      <!-- start breadcrumb --> 
+      <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/">Home</a></li>
+          <li class="breadcrumb-item"><a href="/agent/login">Login</a></li>
+          <li class="breadcrumb-item active" aria-current="page">{{session}} </li>
+      </ol>
+      </nav>
+  <!-- end breadrumb -->
+</div>
+
+
+<div class="container" style="margin-top:50px; margin-bottom:50px;" >
+        <h3>  Feedback From Agent  </h3>
+<table class="table table-hover">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col"> Product Image </th>
+      <th scope="col">PROD NAME </th>
+      <th scope="col">PROD PRICE </th>
+      <th scope="col">PROD BRAND </th>
+      <th scope="col"> YOUR PRICE </th>
+     <th scope="col">  WARE HOUSE REMARKS</th>
+      <th scope="col">  ACTION</th>
+    </tr>
+  </thead>
+  <tbody>
+     {{#if GetCust}}
+  {{#each GetCust}}
+    <tr> 
+
+     <td width="10%"><img src="http://localhost:4500/{{_previousDataValues.path}}" style="width:25%;"><br></td>
+      <td>{{_previousDataValues.prod_name}}</td>
+      <td>{{_previousDataValues.prod_price}}</td>
+      <td>{{_previousDataValues.prod_brand}}</td>
+      <td>{{_previousDataValues.cust_price}}</td>
+      <td>{{_previousDataValues.decision}}</td>
+       <td> <button class="btn btn-primary" onclick="print()"> Print </button></td>
+
+    </tr>
+    {{/each}}
+  {{else}}
+    no product 
+  {{/if}}
+  </tbody>
+</table>
+    </div> 
+
+
+
+
+
+        <!-- footer -->   
+<div class="card text-center footer">
+  <div class="card-header">
+    <marquee><p class="q-text"> Online Shopping Agency Warehousing System........</p> </marquee>
+  </div>
+    <div class="card-body">
+        <h5 class="card-title">Special title treatment</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <input type="text"  class="input-txt" name="" placeholder=" your email here  ">
+          <button class="btn-sub">subscribe</button>
+      
+        <a href="#" class="btn-top">Top</a>
+    </div>
+    <div class="card-footer text-muted">
+        © 2023 Shopping Agency Warehousing System. All rights reserved | Designed by Softwork
+    </div>
+</div>
+    <!-- end footer -->

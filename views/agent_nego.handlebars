@@ -1,0 +1,85 @@
+
+
+  <link rel="stylesheet" href="/css/style.css">
+       <div class="sub_header"></div>
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+   <div class="container">
+              <!-- start breadcrumb --> 
+            <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/agent/admin_login"> login </a></li>
+                <li class="breadcrumb-item active" aria-current="page"> Ware House Response  </li>
+            </ol>
+            </nav>
+               <a href="/agent/wh_resp" class="" style="position:relative;left:85%;background:black;padding:10px;text-decoration:none;color:white;"> Ware House  Response </a>
+        <!-- end breadrumb -->
+   </div>
+
+
+  <div class="container" style="margin-top:20px;margin-bottom:50px;">
+ <h3> Agent to Ware House  </h3>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Product Image</th>
+      <th scope="col">Product Name</th>
+      <th scope="col">Product  Price</th>
+      <th scope="col">Product Brand</th>
+      <th scope="col">Customer Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each getclientmsg}}
+    <tr>
+      <td width="20%"><img src="http://localhost:4500/{{_previousDataValues.path}}" style="width:10%;"><br></td>
+      <form class="row g-3 needs-validation" method="post" action="/agent/agent_nego"> 
+      <input type="hidden" name="prod_id" value="{{_previousDataValues.id}}">
+      <td><input type="text" style="border:0px solid red;" class="pt-2 pb-2 mt-2 mb-2 " readonly name="prod_name" value="{{_previousDataValues.prod_name}}"></td>
+      <td><input type="text" style="border:0px solid red;" class="pt-2 pb-2 mt-2 mb-2 " readonly name="prod_price" value="{{_previousDataValues.prod_price}}"></td>
+      <td><input type="text" style="border:0px solid red;" class="pt-2 pb-2 mt-2 mb-2 " readonly name="prod_brand" value="{{_previousDataValues.prod_brand}}"></td>
+      <td> <input type="text"  type="text" style="border:0px solid red;" class="pt-2 pb-2 mt-2 mb-2 text-center"  readonly required name="cust_price" value="{{_previousDataValues.cust_price}}" ></td>
+      <td><input type="hidden" style="border:0px solid red;" class="pt-2 pb-2 mt-2 mb-2 " readonly name="token" value="{{_previousDataValues.token}}"></td>
+      <input type="hidden" name="path" value="{{_previousDataValues.path}}">
+      <td>
+        <button style="background:#000000;padding:10px;width:100%;border-radius:5px;border:0px solid red;color:#ef233c;font-weight:bold;" onclick="return confirm(' Do you wish to send a Message to Ware house for price negotiations? ')"> Send to Ware House </button>
+      </td>
+      </form>
+    </tr>
+     {{/each}}
+
+  </tbody>
+</table>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- footer -->   
+<div class="card text-center footer">
+  <div class="card-header">
+    <marquee><p class="q-text"> Online Shopping Agency Warehousing System........</p> </marquee>
+  </div>
+    <div class="card-body">
+        <h5 class="card-title">Special title treatment</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <input type="text"  class="input-txt" name="" placeholder=" your email here  ">
+          <button class="btn-sub">subscribe</button>
+      
+        <a href="#" class="btn-top">Top</a>
+    </div>
+    <div class="card-footer text-muted">
+        © 2023 Shopping Agency Warehousing System. All rights reserved | Designed by Softwork
+    </div>
+</div>
+    <!-- end footer -->
